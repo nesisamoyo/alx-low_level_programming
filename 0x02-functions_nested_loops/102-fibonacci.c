@@ -1,26 +1,30 @@
 #include <stdio.h>
 
 /**
- * main - fibonacci 50
+ * main - Entry point
  *
- *
- * Return:  (Success)
+ * Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	unsigned long int i;
-	unsigned long int bef = 1;
-	unsigned long int aft = 2;
+	int i;
+	unsigned long first = 1;
+	unsigned long second = 2;
+	unsigned long sum_of_two = 3;
 
-	printf("%lu", bef);
-
-	for (i = 1; i < 50; i++)
+	printf("1, 2, ");
+	for (i = 0; i < 48; i++)
 	{
-		printf(", %lu", aft);
-		aft += bef;
-		bef = aft - bef;
+		sum_of_two = first + second;
+		printf("%ld", sum_of_two);
+		first = second;
+		second = sum_of_two;
+
+		if (i != 47)
+			printf(", ");
 	}
 	printf("\n");
+
 	return (0);
 }
